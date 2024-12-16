@@ -4,8 +4,8 @@ const fs = require("fs");
 const path = require("path");
 
 const BOT_CONFIG = {
-  TOKEN: processs.env("TOKEN"),
-  CLIENT_ID: process.env("CLIENT_ID"), 
+  TOKEN: processs.env.TOKEN,
+  CLIENT_ID: process.env.CLIENT_ID,
   PREFIX: "!",
 }; 
 
