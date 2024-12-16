@@ -102,11 +102,20 @@ client.on("interactionCreate", async interaction => {
 // Start the bot
 client.login(BOT_CONFIG.TOKEN);
 
-// Create a basic HTTP server for Vercel
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("Discord bot is running.");
-});
+// // Create a basic HTTP server for Vercel
+// const server = http.createServer((req, res) => {
+//   res.writeHead(200, { "Content-Type": "text/plain" });
+//   res.end("Discord bot is running.");
+// });
 
-// Export the HTTP server for Vercel
-module.exports = server;
+// // Export the HTTP server for Vercel
+// module.exports = server;
+
+const express = require('express');
+const app = express();
+
+const PORT = 3000;
+
+app.listen(PORT, () => {
+    console.log(Server running on port ${PORT});
+});
