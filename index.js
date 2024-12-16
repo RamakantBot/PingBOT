@@ -55,7 +55,7 @@ if (fs.existsSync(slashPath)) {
 })();
 
 client.once("ready", () => {
-  console.log(`${client.user.tag} is online and ready!`);
+  console.log(`${client.user.tag} is online!`);
 });
 
 client.on("messageCreate", message => {
@@ -72,7 +72,6 @@ client.on("messageCreate", message => {
 
   try {
     command.execute(message, args);
-    console.log(`Executed prefix command: ${commandName}`);
   } catch (error) {
     console.error(`Error executing prefix command "${commandName}":`, error);
     message.reply("There was an error executing that command.");
@@ -90,7 +89,6 @@ client.on("interactionCreate", async interaction => {
 
   try {
     await command.execute(interaction);
-    console.log(`Executed slash command: ${interaction.commandName}`);
   } catch (error) {
     console.error(`Error executing slash command "${interaction.commandName}":`, error);
     await interaction.reply({
