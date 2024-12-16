@@ -2,6 +2,7 @@ const { Client, GatewayIntentBits, Collection, REST, Routes } = require("discord
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const express = require('express');
 
 const BOT_CONFIG = {
   TOKEN: process.env.TOKEN,
@@ -99,21 +100,11 @@ client.on("interactionCreate", async interaction => {
   }
 });
 
-// Start the bot
 client.login(BOT_CONFIG.TOKEN);
 
-// // Create a basic HTTP server for Vercel
-// const server = http.createServer((req, res) => {
-//   res.writeHead(200, { "Content-Type": "text/plain" });
-//   res.end("Discord bot is running.");
-// });
 
-// // Export the HTTP server for Vercel
-// module.exports = server;
-
-const express = require('express');
+//Render Pinger
 const app = express();
-
 const PORT = 3000;
 
 app.listen(PORT, () => {
