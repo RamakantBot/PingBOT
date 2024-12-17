@@ -59,6 +59,10 @@ client.once("ready", () => {
 });
 
 client.on("messageCreate", message => {
+  if (message.content === `<@${client.user.id}>`) {
+    message.channel.send("Kya Hai?");
+  }
+  
   if (!message.content.startsWith(BOT_CONFIG.PREFIX) || message.author.bot) return;
 
   const args = message.content.slice(BOT_CONFIG.PREFIX.length).trim().split(/ +/);
