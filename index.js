@@ -61,13 +61,18 @@ client.once("ready", () => {
   console.log(`${client.user.tag} is online!`);
 });
 
-client.on("messageCreate", message => {
- // if (message.content === `<@${client.user.id}>`) {
- //   message.channel.send("Kya Hai?");
- // }
 
-  const prefix = BOT_CONFIG.PREFIX || `<@${client.user.id}>`;
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
+client.on("messageCreate", message => {
+   const mention = `<@${client.user.id}>`;
+
+  if (message.content === mention) {
+    message.channel.send("Kya Hai?");
+    return;
+  }
+
+   const prefix = BOT_CONFIG.PREFIX || mention;
+
+if (!(message.content.startsWith(prefix)) || message.author.bot) return;
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
   const commandName = args.shift().toLowerCase();
@@ -78,10 +83,10 @@ client.on("messageCreate", message => {
     return;
   }
 
-  try {
+try {
     command.execute(message, args);
   } catch (error) {
-    console.error(`Error executing prefix command "${commandName}":`, error);
+    console.error(`Error executing command "${commandName}":`, error);
     message.reply("There was an error executing that command.");
   }
 });
