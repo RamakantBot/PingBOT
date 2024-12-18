@@ -4,6 +4,9 @@ const fs = require("fs");
 const path = require("path");
 const express = require('express');
 
+// const { MongoClient, ServerApiVersion } = require('mongodb');
+// const uri = process.env.mongoURL;
+
 const BOT_CONFIG = {
   TOKEN: process.env.TOKEN,
   CLIENT_ID: process.env.CLIENT_ID,
