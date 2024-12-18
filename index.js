@@ -62,14 +62,14 @@ client.once("ready", () => {
 });
 
 client.on("messageCreate", message => {
-  if (message.content === `<@${client.user.id}>`) {
-    message.channel.send("Kya Hai?");
-  }
+ // if (message.content === `<@${client.user.id}>`) {
+ //   message.channel.send("Kya Hai?");
+ // }
 
-  const PREFIX = BOT_CONFIG.PREFIX || `<@${client.user.id}>`;
-  if (!message.content.startsWith(PREFIX) || message.author.bot) return;
+  const prefix = BOT_CONFIG.PREFIX || `<@${client.user.id}>`;
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-  const args = message.content.slice(PREFIX.length).trim().split(/ +/);
+  const args = message.content.slice(prefix.length).trim().split(/ +/);
   const commandName = args.shift().toLowerCase();
 
   const command = client.commands.get(commandName);
