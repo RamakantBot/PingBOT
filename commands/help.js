@@ -5,7 +5,7 @@ module.exports = {
   description: "Madat karnari command",
   async execute(message, args) {
     const prefixCommands = message.client.commands.map(cmd => `${cmd.name}`).join(", ");
-    const slashCommands = message.client.slashCommands.map(cmd => `${cmd.data.name}`).join(", ");
+    const slashCommands = message.client.slashCommands.map(cmd => `/${cmd.data.name}`).join(" ");
 
     const embed = new EmbedBuilder()
       .setColor("#87ceeb")
