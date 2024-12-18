@@ -1,1 +1,1 @@
-# pingbot
+# PingBOT
