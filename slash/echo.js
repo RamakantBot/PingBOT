@@ -18,6 +18,11 @@ module.exports = {
         ephemeral: true,
       });
       return;
+    } else {
+      await interaction.reply({
+        content: "Message Sent!",
+        ephemeral: true,
+      });
     }
 
     const message = interaction.options.getString("message");
