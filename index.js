@@ -107,8 +107,10 @@ client.login(BOT_CONFIG.TOKEN);
 
 //Render Pinger
 const app = express();
-const PORT = 3000;
+const port = 3000;
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+app.get('/', (req, res) => res.send('Jinda hu mai!'));
+
+app.listen(port, () =>
+console.log(`${port}`)
+);
