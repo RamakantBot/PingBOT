@@ -10,7 +10,7 @@ module.exports = {
   const sent_time = Date.now();
       message.reply("pong!").then((msg) => {
    const latency = Date.now() - sent_time;
-        message.channel.send(`Latency: ${latency} ms`);
+        msg.channel.send(`Latency: ${latency} ms`);
       });
     };
   };
