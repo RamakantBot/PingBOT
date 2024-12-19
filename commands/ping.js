@@ -8,7 +8,7 @@ module.exports = {
       message.channel.send(`${user}`);
     } else {
       const sentMessage = Date.now();
-      message.channel.send("pong!").then(() => {
+      message.reply("pong!").then(() => {
         const latency = Date.now() - sentMessage;
         message.channel.send(`Latency: ${latency} ms`);
       });
