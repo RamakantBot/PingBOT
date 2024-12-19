@@ -1,17 +1,17 @@
 module.exports = {
   name: "ping",
-  description: "PING YO MAMA",
+  description: "pong.",
   execute(message, args) {
-    const user = message.mentions.users.first();
+ const user = message.mentions.users.first();
 
     if (user) {
-      message.channel.send(`${user}`);
+  message.channel.send(`${user} namaskar 🙏`);
     } else {
-      const sentMessage = Date.now();
-      message.reply("pong!").then(() => {
-        const latency = Date.now() - sentMessage;
+  const sent_time = Date.now();
+      message.reply("pong!").then((msg) => {
+   const latency = Date.now() - sent_time;
         message.channel.send(`Latency: ${latency} ms`);
       });
-    }
-  },
+    };
+  };
 };
