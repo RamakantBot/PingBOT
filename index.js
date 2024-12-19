@@ -10,7 +10,7 @@ const express = require('express');
 const BOT_CONFIG = {
   TOKEN: process.env.TOKEN,
   CLIENT_ID: process.env.CLIENT_ID,
-  PREFIX: "+",
+  PREFIX: ".",
 }; 
 
 const client = new Client({
