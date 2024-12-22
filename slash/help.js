@@ -1,21 +1,22 @@
-const { EmbedBuilder } = require("discord.js");
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
 module.exports = {
-  name: "help",
-  description: "Madat karnari command",
-  async execute(message, args) {
-    const prefixCommands = message.client.commands.map(cmd => `${cmd.name}`).join(", ");
-    const slashCommands = message.client.slashCommands.map(cmd => `/${cmd.data.name}`).join(" ");
+  data: new SlashCommandBuilder()
+    .setName("help")
+    .setDescription("Provides assistance and shows available commands."),
+  async execute(interaction) {
+    const prefixCommands = interaction.client.commands.map(cmd => `${cmd.name}`).join(", ");
+    const slashCommands = interaction.client.slashCommands.map(cmd => `/${cmd.data.name}`).join(" ");
 
     const embed = new EmbedBuilder()
       .setColor("#87ceeb")
-      .setTitle("HELP SECTION")      
+      .setTitle("HELP SECTION")
       .addFields(
         { name: "Prefix", value: `My prefix is "${process.env.PREFIX}"` },
         { name: "Prefix Commands", value: `\`\`\`${prefixCommands}\`\`\`` || "No prefix commands available.", inline: false },
         { name: "Slash Commands", value: `\`\`\`${slashCommands}\`\`\`` || "No slash commands available.", inline: false }
       );
-      
-    message.channel.send({ embeds: [embed] });
+
+    await interaction.reply({ embeds: [embed] });
   },
 };
