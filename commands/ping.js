@@ -13,5 +13,5 @@ module.exports = {
         msg.edit(`Pong! Latency is ${latency} ms`);
       });
     };
-  };
+  }
 };
