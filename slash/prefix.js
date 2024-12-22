@@ -5,6 +5,6 @@ module.exports = {
     .setName("prefix")
     .setDescription("bot prefix"),
   async execute(interaction) {
-    await interaction.reply(`My prefix is "${PREFIX}"`);
+    await interaction.reply(`My prefix is"${PREFIX}"` );
   },
 };

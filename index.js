@@ -12,6 +12,8 @@ const BOT_CONFIG = {
   PREFIX: "!",
 }; 
 
+const PREFIX = BOT_CONFIG.PREFIX;
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
