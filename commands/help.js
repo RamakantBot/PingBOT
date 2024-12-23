@@ -11,7 +11,7 @@ module.exports = {
       .setColor("#87ceeb")
       .setTitle("HELP SECTION")      
       .addFields(
-        { name: `My prefix is "${process.env.PREFIX}"` },
+        { name: `My prefix is "${process.env.PREFIX}"`, value: "" },
         { name: "Prefix Commands", value: `\`\`\`${prefixCommands}\`\`\`` || "No prefix commands available.", inline: false },
         { name: "Slash Commands", value: `\`\`\`${slashCommands}\`\`\`` || "No slash commands available.", inline: false }
       );
